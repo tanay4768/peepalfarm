@@ -16,5 +16,6 @@ The project is related to a non profit ngo which helps animals and i am very ins
 6)	Fixing the size constraints so that ui will look nice in any layout.
 To Do : 
 1)	Use Getx Binding to stop all controllers executing at the same time.
-2)	Using username as key to database.
+2)	Using username as key to database
+3)	Add a splash screen to the app
 
