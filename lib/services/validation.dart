@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 class Validator {
   static bool validateEmail(String email) {
-    // Regular expression for email validation
     final RegExp emailRegex = RegExp(r'^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$');
     return emailRegex.hasMatch(email);
   }
@@ -24,7 +23,6 @@ class Validator {
     bool isValid = true;
 
     if (isFieldEmpty(email)) {
-      // Show error message for empty email field
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Please enter your email address')),
       );
@@ -32,7 +30,6 @@ class Validator {
     }
 
     if (isFieldEmpty(password)) {
-      // Show error message for empty password field
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Please enter your password')),
       );
@@ -40,7 +37,6 @@ class Validator {
     }
 
     if (isFieldEmpty(confirmPassword)) {
-      // Show error message for empty confirm password field
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Please confirm your password')),
       );
@@ -53,7 +49,6 @@ class Validator {
     }
 
     if (!validatePasswordMatch(password, confirmPassword)) {
-      // Show error message for password mismatch
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Passwords do not match')),
       );
@@ -61,7 +56,6 @@ class Validator {
     }
 
     if (isValid) {
-      // Navigate to the Login screen
       Navigator.pushNamed(context, '/login');
     }
 

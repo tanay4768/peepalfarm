@@ -25,11 +25,6 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     // Determine if the error border should be shown
     final isError = (errorText ?? "").isNotEmpty;
-    final errorBorder = UnderlineInputBorder(
-      borderSide: BorderSide(
-        color: CustomColors.primary,
-      ),
-    );
 
     return TextFormField(
       obscureText: obscureText,

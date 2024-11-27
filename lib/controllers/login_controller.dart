@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:peepalfram/services/auth_service.dart';
 import 'package:peepalfram/viewmodel/login_viewmodel.dart';
 
 class LoginController extends GetxController {

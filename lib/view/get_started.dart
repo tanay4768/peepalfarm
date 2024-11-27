@@ -35,7 +35,7 @@ class _GetStartedState extends State<GetStarted> {
               height: SizeConfig.eight * 22,
               width: SizeConfig.threeSixty,
               decoration: BoxDecoration(
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).canvasColor,
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(SizeConfig.twentyFour),
                     topRight: Radius.circular(SizeConfig.twentyFour)),
