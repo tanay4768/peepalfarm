@@ -20,5 +20,5 @@ class SizeConfig {
   static double twoEighty = 280.sp;
   static double threeSixty = 360.sp;
 
-  // Add more sizes as needed
+ 
 }

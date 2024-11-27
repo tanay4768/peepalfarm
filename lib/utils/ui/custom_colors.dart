@@ -7,6 +7,6 @@ class CustomColors {
   static Color parblack =
       const Color.fromARGB(255, 55, 55, 54).withOpacity(0.76);
   static Color green = const Color.fromARGB(255, 109, 234, 36);
-  static Color blue = Color.fromARGB(255, 189, 221, 62);
+  static Color blue = const Color.fromARGB(255, 189, 221, 62);
   static Color primary = const Color.fromARGB(255, 248, 212, 104);
 }

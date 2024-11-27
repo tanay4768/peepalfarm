@@ -13,7 +13,7 @@ class AppTheme {
     primaryColor: CustomColors.primary,
     hintColor: CustomColors.black,
     scaffoldBackgroundColor: CustomColors.blue,
-    textTheme: CustomTexttheme.lightmode,
+    textTheme: CustomTexttheme.lightTheme,
     cardTheme: CcardTheme.lightmode,
     appBarTheme: AppBarTheme(
       color: CustomColors.white,
@@ -30,7 +30,7 @@ class AppTheme {
       primaryColor: CustomColors.black,
       hintColor: CustomColors.white,
       scaffoldBackgroundColor: CustomColors.green,
-      textTheme: CustomTexttheme.darkmode,
+      textTheme: CustomTexttheme.darkTheme,
       cardTheme: CcardTheme.darkmode,
       appBarTheme: AppBarTheme(
         color: CustomColors.black,
