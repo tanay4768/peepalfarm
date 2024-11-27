@@ -14,7 +14,7 @@ The project is related to a non profit ngo which helps animals and i am very ins
 4)	Redefining textTheme data, text theme data is redefined to fit the Ui perfectly
 5)	Keeping darkMode setting to be based on the Users system as I am planning to put it inside the app.
 6)	Fixing the size constraints so that ui will look nice in any layout.
-To Do : 
+7)	###To Do : 
 1)	Use Getx Binding to stop all controllers executing at the same time.
 2)	Using username as key to database
 3)	Add a splash screen to the app
