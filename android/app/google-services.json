@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "365467431876",
+    "project_id": "ngoorg",
+    "storage_bucket": "ngoorg.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:365467431876:android:b6b96567559350ec1e6a91",
+        "android_client_info": {
+          "package_name": "com.example.peepalfram"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcggAT7Vow1Fa9T9ei3nbBhXrdKY9HGQU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
