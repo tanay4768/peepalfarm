@@ -24,7 +24,7 @@ class Globals {
   static void showResetDialog() {
     TextEditingController emailController = TextEditingController();
     Get.defaultDialog(
-        title: "Follow Us",
+        title: "Reset password",
         middleText: "Please enter your email to follow us:",
         backgroundColor: CustomColors.white,
         titleStyle: TextStyle(color: CustomColors.blue),
