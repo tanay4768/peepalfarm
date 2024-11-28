@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:peepalfram/controllers/login_controller.dart';
 import 'package:peepalfram/services/validation.dart';
+import 'package:peepalfram/utils/globals.dart';
 import 'package:peepalfram/utils/ui/custom_colors.dart';
-import 'package:peepalfram/utils/ui/sizeconfig.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:peepalfram/utils/ui/sizeconstraints/display_config.dart';
+import 'package:peepalfram/utils/ui/sizeconstraints/sizeconfig.dart';
 import 'package:peepalfram/widgets/custom_textfield.dart';
 
 class LoginPage extends StatefulWidget {
@@ -24,9 +27,9 @@ class _LoginPageState extends State<LoginPage> {
         body: SingleChildScrollView(
       child: Center(
         child: Container(
-          padding: EdgeInsets.all(SizeConfig.twenty),
-          height: SizeConfig.eight * 100,
-          width: SizeConfig.threeSixty,
+          padding: EdgeInsets.all(DisplayConfig.twenty),
+          height: DisplayConfig.eight * 100.h,
+          width: DisplayConfig.threeSixty.w,
           decoration: BoxDecoration(
               image: DecorationImage(
                   image: theme.brightness == Brightness.dark
@@ -36,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             children: [
               SizedBox(
-                height: SizeConfig.eight * 20,
+                height: DisplayConfig.eight * 20.h,
               ),
               Card(
                 color: Colors.transparent,
@@ -50,13 +53,13 @@ class _LoginPageState extends State<LoginPage> {
                     child: Column(
                       children: [
                         Text('Login', style: theme.textTheme.headlineLarge),
-                        SizedBox(height: SizeConfig.twenty),
+                        SizedBox(height: DisplayConfig.twenty.h),
                         Obx(
                           () => Form(
                             key: _formKey,
                             child: Column(
                               children: [
-                                SizedBox(height: SizeConfig.ten),
+                                SizedBox(height: DisplayConfig.ten.h),
                                 CustomTextField(
                                   hintText: 'Email',
                                   icon: Icons.email,
@@ -77,7 +80,7 @@ class _LoginPageState extends State<LoginPage> {
                                     return null;
                                   },
                                 ),
-                                SizedBox(height: SizeConfig.ten),
+                                SizedBox(height: DisplayConfig.ten.h),
                                 CustomTextField(
                                   hintText: 'Password',
                                   icon: Icons.lock,
@@ -107,7 +110,7 @@ class _LoginPageState extends State<LoginPage> {
                                         controller.togglePasswordVisibility,
                                   ),
                                 ),
-                                SizedBox(height: SizeConfig.twenty),
+                                SizedBox(height: DisplayConfig.twenty.h),
                                 ElevatedButton(
                                   onPressed: () async {
                                     if (_formKey.currentState!.validate()) {
@@ -116,8 +119,8 @@ class _LoginPageState extends State<LoginPage> {
                                   },
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: controller.signInbtn.value
-                                        ? CustomColors.primary
-                                        : CustomColors.primary.withOpacity(0.5),
+                                        ? theme.hintColor
+                                        : theme.hintColor.withOpacity(0.5),
                                   ),
                                   child: const Text('Login'),
                                 )
@@ -125,12 +128,16 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           ),
                         ),
-                        SizedBox(height: SizeConfig.ten),
+                        SizedBox(height: DisplayConfig.ten.h),
                         TextButton(
-                          onPressed: () {},
+                          style: const ButtonStyle(
+                              alignment: Alignment.centerRight),
+                          onPressed: () {
+                            Globals.showResetDialog();
+                          },
                           child: const Text('Forgot Password?'),
                         ),
-                        SizedBox(height: SizeConfig.twenty),
+                        SizedBox(height: DisplayConfig.twenty.h),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [

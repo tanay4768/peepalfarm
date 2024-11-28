@@ -9,8 +9,10 @@ class LoginController extends GetxController {
   String? password;
   RxBool showPassword = false.obs;
   void allFilled() {
-    signInbtn.value = email.toString().isNotEmpty == true &&
-        password.toString().isNotEmpty == true;
+    if (email != null && password!=null) {
+  signInbtn.value = email.toString().isNotEmpty == true &&
+      password.toString().isNotEmpty == true;
+}
   }
     void togglePasswordVisibility() {
     showPassword.value = !showPassword.value;

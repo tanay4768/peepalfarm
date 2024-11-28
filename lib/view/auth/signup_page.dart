@@ -3,8 +3,10 @@ import 'package:get/get.dart';
 import 'package:peepalfram/controllers/signin_controller.dart';
 import 'package:peepalfram/services/validation.dart';
 import 'package:peepalfram/utils/ui/custom_colors.dart';
-import 'package:peepalfram/utils/ui/sizeconfig.dart';
+import 'package:peepalfram/utils/ui/sizeconstraints/display_config.dart';
+import 'package:peepalfram/utils/ui/sizeconstraints/sizeconfig.dart';
 import 'package:peepalfram/widgets/custom_textfield.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
@@ -25,8 +27,8 @@ class _SignupPageState extends State<SignupPage> {
         child: Center(
           child: Container(
             padding: EdgeInsets.all(SizeConfig.twenty),
-            height: SizeConfig.eight * 100,
-            width: SizeConfig.threeSixty,
+            height: DisplayConfig.eight * 100.h,
+            width: DisplayConfig.threeSixty.w,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: theme.brightness == Brightness.dark
@@ -37,9 +39,12 @@ class _SignupPageState extends State<SignupPage> {
             ),
             child: Column(
               children: [
-                 SizedBox(height: SizeConfig.eight * 10),
-                          Text("Sign Up", style: theme.textTheme.titleLarge,),
-                SizedBox(height: SizeConfig.eight * 10),
+                SizedBox(height: DisplayConfig.eight * 10.h),
+                Text(
+                  "Sign Up",
+                  style: theme.textTheme.titleLarge,
+                ),
+                SizedBox(height: DisplayConfig.eight * 10.h),
                 Card(
                   color: Colors.transparent,
                   child: Container(
@@ -62,9 +67,10 @@ class _SignupPageState extends State<SignupPage> {
                                     icon: Icons.person_pin_rounded,
                                     onChanged: (value) {
                                       controller.fullname = value;
-                                      controller.fullNameError.value = value.isEmpty
-                                          ? 'Please enter your full name'
-                                          : "";
+                                      controller.fullNameError.value =
+                                          value.isEmpty
+                                              ? 'Please enter your full name'
+                                              : "";
                                       controller
                                           .allFilled(); // Check if all fields are filled
                                     },
@@ -76,16 +82,17 @@ class _SignupPageState extends State<SignupPage> {
                                       return null;
                                     },
                                   ),
-                                  SizedBox(height: SizeConfig.ten),
+                                  SizedBox(height: DisplayConfig.ten.h),
                                   CustomTextField(
                                     hintText: 'Username',
                                     icon: Icons.person,
                                     errorText: controller.usernameError.value,
                                     onChanged: (value) {
                                       controller.username = value;
-                                      controller.usernameError.value = value.isEmpty
-                                          ? "Field can't be empty"
-                                          : "";
+                                      controller.usernameError.value =
+                                          value.isEmpty
+                                              ? "Field can't be empty"
+                                              : "";
                                       controller.allFilled();
                                     },
                                     validator: (value) {
@@ -97,16 +104,17 @@ class _SignupPageState extends State<SignupPage> {
                                       return null;
                                     },
                                   ),
-                                  SizedBox(height: SizeConfig.ten),
+                                  SizedBox(height: DisplayConfig.ten.h),
                                   CustomTextField(
                                     hintText: 'Email',
                                     icon: Icons.email,
                                     errorText: controller.emailError.value,
                                     onChanged: (value) {
                                       controller.email = value;
-                                      controller.emailError.value = value.isEmpty
-                                          ? "Email can't be empty"
-                                          : "";
+                                      controller.emailError.value =
+                                          value.isEmpty
+                                              ? "Email can't be empty"
+                                              : "";
                                       controller.allFilled();
                                     },
                                     validator: (value) {
@@ -118,7 +126,7 @@ class _SignupPageState extends State<SignupPage> {
                                       return null;
                                     },
                                   ),
-                                  SizedBox(height: SizeConfig.ten),
+                                  SizedBox(height: DisplayConfig.ten.h),
                                   CustomTextField(
                                     hintText: 'Password',
                                     icon: Icons.lock,
@@ -126,9 +134,10 @@ class _SignupPageState extends State<SignupPage> {
                                     obscureText: !controller.showPassword.value,
                                     onChanged: (value) {
                                       controller.password = value;
-                                      controller.passwordError.value = value.isEmpty
-                                          ? 'Please enter a password'
-                                          : "";
+                                      controller.passwordError.value =
+                                          value.isEmpty
+                                              ? 'Please enter a password'
+                                              : "";
                                       controller.allFilled();
                                     },
                                     validator: (value) {
@@ -147,11 +156,12 @@ class _SignupPageState extends State<SignupPage> {
                                           controller.togglePasswordVisibility,
                                     ),
                                   ),
-                                  SizedBox(height: SizeConfig.ten),
+                                  SizedBox(height: DisplayConfig.ten.h),
                                   CustomTextField(
                                     hintText: 'Confirm Password',
                                     icon: Icons.lock,
-                                    errorText: controller.cnfpasswordError.value,
+                                    errorText:
+                                        controller.cnfpasswordError.value,
                                     obscureText:
                                         !controller.showConfirmPassword.value,
                                     onChanged: (value) {
@@ -184,18 +194,18 @@ class _SignupPageState extends State<SignupPage> {
                                           .toggleConfirmPasswordVisibility,
                                     ),
                                   ),
-                                  SizedBox(height: SizeConfig.twenty),
+                                  SizedBox(height: DisplayConfig.twenty),
                                   ElevatedButton(
                                     onPressed: () async {
                                       if (_formKey.currentState!.validate()) {
                                         controller.signup();
                                       }
                                     },
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor: controller.signInbtn.value
-                                          ? CustomColors.primary
-                                          : CustomColors.primary.withOpacity(0.5),
-                                    ),
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: controller.signInbtn.value
+                                        ? theme.hintColor
+                                        : theme.hintColor.withOpacity(0.5),
+                                  ),
                                     child: const Text('Sign Up'),
                                   )
                                 ],
@@ -203,28 +213,27 @@ class _SignupPageState extends State<SignupPage> {
                             ),
                           ),
                           SizedBox(
-                            height: SizeConfig.twenty,
+                            height: DisplayConfig.twenty.sp,
                           ),
                           Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Text('Already have an account?'),
-                            TextButton(
-                              onPressed: () {
-                                Get.offNamed("/login");
-                              },
-                              child: Text(
-                                'Login',
-                                style: TextStyle(
-                                    color: theme.scaffoldBackgroundColor,
-                                    fontSize: SizeConfig.sixteen),
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Text('Already have an account?'),
+                              TextButton(
+                                onPressed: () {
+                                  Get.offNamed("/login");
+                                },
+                                child: Text(
+                                  'Login',
+                                  style: TextStyle(
+                                      color: theme.scaffoldBackgroundColor,
+                                      fontSize: SizeConfig.sixteen),
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
+                            ],
+                          ),
                         ],
                       ),
-                        
                     ),
                   ),
                 ),

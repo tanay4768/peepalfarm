@@ -11,9 +11,9 @@ class _SplashScreenState extends State<Splashscreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
               image: DecorationImage(
-                  image: const AssetImage("assets/images/bglight.png"),
+                  image:  AssetImage("assets/images/bglight.png"),
                   fit: BoxFit.cover)),
       ),
     );

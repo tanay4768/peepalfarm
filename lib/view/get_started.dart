@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:peepalfram/utils/ui/sizeconfig.dart';
+import 'package:peepalfram/utils/ui/sizeconstraints/display_config.dart';
 
 class GetStarted extends StatefulWidget {
   const GetStarted({super.key});
@@ -15,8 +16,8 @@ class _GetStartedState extends State<GetStarted> {
     return Scaffold(
         body: Center(
       child: Container(
-        height: SizeConfig.eight * 100,
-        width: SizeConfig.threeSixty,
+        height: DisplayConfig.eight * 100.h,
+        width: DisplayConfig.threeSixty.w,
         decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage(
@@ -28,30 +29,33 @@ class _GetStartedState extends State<GetStarted> {
             const Spacer(),
             Container(
               padding: EdgeInsets.only(
-                  top: SizeConfig.twelve,
-                  bottom: SizeConfig.twelve,
-                  left: SizeConfig.twenty,
-                  right: SizeConfig.twenty),
-              height: SizeConfig.eight * 22,
-              width: SizeConfig.threeSixty,
+                  top: DisplayConfig.twelve.h,
+                  bottom: DisplayConfig.twelve.h,
+                  left: DisplayConfig.twenty.w,
+                  right: DisplayConfig.twenty.w),
+              height: DisplayConfig.eight * 22.h,
+              width: DisplayConfig.threeSixty.w,
               decoration: BoxDecoration(
                 color: Theme.of(context).canvasColor,
                 borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(SizeConfig.twentyFour),
-                    topRight: Radius.circular(SizeConfig.twentyFour)),
+                    topLeft: Radius.circular(DisplayConfig.twentyFour.h),
+                    topRight: Radius.circular(DisplayConfig.twentyFour.h)),
               ),
               alignment: Alignment.bottomCenter,
               child: Column(
                 children: [
                   SizedBox(
-                    height: SizeConfig.ten,
+                    height: DisplayConfig.ten.h,
                   ),
                   Text(
                     "Be Kind. Be Humane. Be Change.",
-                    style: Theme.of(context).textTheme.bodyMedium,
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge
+                        ?.copyWith(fontWeight: FontWeight.w700),
                   ),
                   SizedBox(
-                    height: SizeConfig.twenty,
+                    height: DisplayConfig.twenty.h,
                   ),
                   ElevatedButton(
                     onPressed: () {
@@ -61,11 +65,11 @@ class _GetStartedState extends State<GetStarted> {
                     child: const Text("Get Started"),
                   ),
                   SizedBox(
-                    height: SizeConfig.sixteen,
+                    height: DisplayConfig.sixteen.h,
                   ),
                   Text(
                     "Every step you take can amplify voice of voiceless",
-                    style: Theme.of(context).textTheme.bodySmall,
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
                   ),
                 ],

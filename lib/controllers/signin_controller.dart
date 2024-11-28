@@ -21,11 +21,17 @@ class SigninController extends GetxController {
 
  
   void allFilled() {
-    signInbtn.value = email.toString().isNotEmpty == true &&
+    if(  email !=null &&
+        password!=null &&
+        confirm!=null &&
+        fullname!=null &&
+        username!=null) {
+      signInbtn.value = email.toString().isNotEmpty == true &&
         password.toString().isNotEmpty == true &&
         confirm.toString().isNotEmpty == true &&
         fullname.toString().isNotEmpty == true &&
         username.toString().isNotEmpty == true;
+    }
   }
 
 

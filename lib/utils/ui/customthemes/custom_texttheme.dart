@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:peepalfram/utils/ui/custom_colors.dart';
-import 'package:peepalfram/utils/ui/sizeconfig.dart';
+import 'package:peepalfram/utils/ui/sizeconstraints/sizeconfig.dart';
 
 class CustomTexttheme {
   static TextTheme lightTheme = TextTheme(
