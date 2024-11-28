@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:peepalfram/utils/ui/custom_colors.dart';
 import 'package:peepalfram/utils/ui/sizeconstraints/display_config.dart';
 
 class CustomTextField extends StatelessWidget {

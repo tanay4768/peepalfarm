@@ -13,7 +13,7 @@ class Globals {
       backgroundColor: CustomColors.green,
       borderRadius: 20,
       margin: const EdgeInsets.all(15),
-      colorText: Colors.white,
+      colorText: const Color.fromARGB(255, 62, 3, 3),
       duration: const Duration(seconds: 3),
       isDismissible: true,
       dismissDirection: DismissDirection.horizontal,
@@ -35,7 +35,7 @@ class Globals {
             controller: emailController,
             decoration: InputDecoration(
               hintText: "Enter your email",
-              hintStyle: TextStyle(color: Colors.black),
+              hintStyle: const TextStyle(color: Colors.black),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
@@ -52,7 +52,7 @@ class Globals {
             try {
               await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
               Get.back();
-              showCustomSnackbar("Success", "Link sent to the email");
+               showCustomSnackbar("Success", "Link Sent to $email");
             } catch (e) {
               showCustomSnackbar("Error", e.toString());
             }

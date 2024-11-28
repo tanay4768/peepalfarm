@@ -18,6 +18,7 @@ class AuthService {
   static Future<bool> signUp(String emailAddress, String password) async {
     bool success = false;
     try {
+      // ignore: unused_local_variable
       final credential =
           await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: emailAddress,

@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:peepalfram/controllers/login_controller.dart';
 import 'package:peepalfram/services/validation.dart';
 import 'package:peepalfram/utils/globals.dart';
-import 'package:peepalfram/utils/ui/custom_colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:peepalfram/utils/ui/sizeconstraints/display_config.dart';
 import 'package:peepalfram/utils/ui/sizeconstraints/sizeconfig.dart';

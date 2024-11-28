@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:peepalfram/controllers/signin_controller.dart';
 import 'package:peepalfram/services/validation.dart';
-import 'package:peepalfram/utils/ui/custom_colors.dart';
 import 'package:peepalfram/utils/ui/sizeconstraints/display_config.dart';
 import 'package:peepalfram/utils/ui/sizeconstraints/sizeconfig.dart';
 import 'package:peepalfram/widgets/custom_textfield.dart';
